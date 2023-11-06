@@ -1,0 +1,17 @@
+main {
+    font-family: 'Noto Serif Display', serif;
+    background-image: url('/images/logos/mi6-seal-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 3.6rem;
+        font-weight: 300;
+        text-align: center;
+    }
+}

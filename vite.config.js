@@ -7,7 +7,7 @@ export default defineConfig({
             input: [
                 "resources/css/app.scss",
                 "resources/js/app.js",
-                "resources/js/people-of-interest-app.jsx",
+                "resources/js/people-of-interest.jsx",
             ],
             refresh: true,
         }),

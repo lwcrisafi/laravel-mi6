@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './people-of-interest-app/App.jsx'
+
  
 export default function ReactAppName() {
     return (
