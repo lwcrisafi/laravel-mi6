@@ -48,10 +48,10 @@
     &__arrow {
         background-color: #163838;
         position: absolute;
-        top: 1rem;
-        right: -1.3rem;
-        width: 1.3rem;
-        height: 1.5rem;
+        top: 2rem;
+        right: -3rem;
+        width: 3rem;
+        height: 3rem;
         font-size: 1rem;
         display: flex;
         align-items: center;
@@ -64,7 +64,9 @@
         }
 
         &_closed {
+                
             &::after {
+                
                 content: '>';
             }
         }
@@ -72,5 +74,12 @@
 
     &_closed {
         width: 0;
+        
     }
 }
+// .sidenav__arrow_closed{
+//     top: 2rem;
+//     width: 3rem;
+//     height: 3rem;
+    
+// }
