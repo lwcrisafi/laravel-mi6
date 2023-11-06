@@ -13,12 +13,19 @@ class PersonController extends Controller
 
        
 
-        $people = Person::with('aliases', 'statuses')->get();
+        $people = Person::with('aliases')
+        ->where('status_text', 'Active')
+        ->get();
         
         
 
         return $people;
 
+    }
+
+    public function show($person_id){
+        $person_id = Person::where('id',$person_id)->firstOrFail();
+        return $person_id;
     }
 
 
