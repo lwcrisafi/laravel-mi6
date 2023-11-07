@@ -1,5 +1,6 @@
 import React from "react";
 import People from "./People";
+import Missions from "./Missions";
 
 export default function MainContent({ content }) {
     let chosenContent;
@@ -9,6 +10,9 @@ export default function MainContent({ content }) {
             break;
         case "people-of-interest":
             chosenContent = <People />;
+            break;
+        case "missions":
+            chosenContent = <Missions />;
             break;
         default:
             break;
