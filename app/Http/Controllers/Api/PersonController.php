@@ -9,19 +9,7 @@ use Illuminate\Http\Request;
 class PersonController extends Controller
 {
     
-    public function index() {
-
-       
-
-        $people = Person::with('aliases')
-        ->where('status_text', 'Active')
-        ->get();
-        
-        
-
-        return $people;
-
-    }
+  
 
     public function show($person_id){
         $person_id = Person::where('id',$person_id)->firstOrFail();
