@@ -6,35 +6,25 @@ use App\Http\Controllers\Controller;
 use App\Models\Person;
 use Illuminate\Http\Request;
 
-/* class PersonController extends Controller
+class PersonController extends Controller
 {
-<<<<<<< HEAD
-    public function index() {
-=======
+
     public function index()
     {
-        $people = Person::with('aliases', 'statuses', 'image:id,path')->get();
+        // $people = Person::with('aliases')
+        //     ->whereHas('aliases', function ($query) {
+        //         $query->whereNotNull('alias');
+        //     })
+        //     ->get();
+        $people = Person::with('statuses')->where('status_id', 1)->where('name', 'not like', '%unknown%')->get();
+
         return $people;
     }
-}
-*/
->>>>>>> 00f19c82a9a8fa9cffa5c66090ccba985e3307b5
 
+    public function show($person_id)
+    {
+        $person = Person::findOrFail($person_id);
 
-        $people = Person::with('aliases')
-        ->where('status_text', 'Active')
-        ->get();
-        
-        
-
-// class PersonController extends Controller
-// {
-//     public function index()
-//     {
-//         $people = Person::with('statuses', 'image:id,path')
-//             ->withCount('aliases') // Load the count of aliases
-//             ->has('aliases') // Only load aliases for people who have at least one alias
-//             ->get();
-
+        return $person;
     }
 }
