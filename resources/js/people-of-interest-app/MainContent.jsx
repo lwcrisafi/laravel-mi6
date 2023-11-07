@@ -6,7 +6,7 @@ export default function MainContent() {
         <>
             <main>
                 <h1>Welcome to MI6</h1>
-                
+                <People />
             </main>
         </>
     );
