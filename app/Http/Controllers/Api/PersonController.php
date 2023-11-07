@@ -63,15 +63,17 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-public function index()
-    {
+    public function index() {
+
+       
 
         $people = Person::with('aliases')
-            ->whereHas('aliases', function ($query) {
-                $query->whereNotNull('alias');
-            })
-            ->get();
+        ->where('status_text', 'Active')
+        ->get();
+        
+        
 
         return $people;
+
     }
 }
