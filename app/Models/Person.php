@@ -29,5 +29,6 @@ class Person extends Model
     public function missions()
     {
         return $this->hasMany(Mission::class);
+        // return $this->belongToMany(Mission::class, 'role_user', 'user_id', 'role_id')
     }
 }

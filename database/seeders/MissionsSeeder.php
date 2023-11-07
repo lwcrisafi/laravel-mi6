@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Mission;
 
@@ -116,11 +116,12 @@ class MissionsSeeder extends Seeder
     ]
 ];
 
-        foreach ($missions as $missionData) {
-            $mission = new Mission();
-            $mission->name = $missionData['name'];
-            $mission->year = $missionData['year'];
-            $mission->save();
+        foreach ($missions as $key => $mission) {
+            $new_mission = new Mission;
+            $new_mission->name = $mission['name'];
+            $new_mission->year = $mission['year'];
+            //$mission->fill($mission);
+            $new_mission->save();
             }
 
     }
