@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Navigation() {
+export default function Navigation({ content, setContent }) {
     const [open, setOpen] = useState(true);
     const toggleMenu = () => {
         setOpen(!open);
@@ -17,11 +17,30 @@ export default function Navigation() {
                     />
 
                     <ul className="sidenav__links">
-                        <li className="sidenav__link sidenav__link_active">
-                            <a href="#">Home</a>
+                        <li
+                            className={
+                                "sidenav__link" +
+                                (content === "" ? " sidenav__link_active" : "")
+                            }
+                        >
+                            <a href="#" onClick={() => setContent("")}>
+                                Home
+                            </a>
                         </li>
-                        <li className="sidenav__link">
-                            <a href="#">People of interest</a>
+                        <li
+                            className={
+                                "sidenav__link" +
+                                (content === "people-of-interest"
+                                    ? " sidenav__link_active"
+                                    : "")
+                            }
+                        >
+                            <a
+                                href="#"
+                                onClick={() => setContent("people-of-interest")}
+                            >
+                                People of interest
+                            </a>
                         </li>
                     </ul>
                 </div>

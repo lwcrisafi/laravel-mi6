@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "./Navigation";
 import MainContent from "./MainContent";
 import "./styles/app.scss";
-import People from "./People";
 
 export default function App() {
+    const [content, setContent] = useState("");
     return (
         <>
-            <Navigation />
-            <MainContent />
+            <Navigation content={content} setContent={setContent} />
+            <MainContent content={content} />
         </>
     );
 }
