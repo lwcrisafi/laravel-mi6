@@ -20,7 +20,7 @@ class Person extends Model
         return $this->belongsTo(Image::class, 'image_id', 'id');
     }
 
-    public function statuses()
+    public function status()
     {
         return $this->belongsTo(Status::class);
     }

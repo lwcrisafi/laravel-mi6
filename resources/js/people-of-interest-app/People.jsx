@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import StatusFilter from "./StatusFilter";
+
 export default function People() {
     const [peopleData, setPeopleData] = useState([]);
     const [personId, setPersonId] = useState(null);
     const [selectedStatus, setSelectedStatus] = useState("");
 
+    const loadSearch = async () => {
+        const response = await fetch(
+            "/api/people" +
+                (selectedStatus !== ""
+                    ? "?status=" + encodeURIComponent(selectedStatus)
+                    : "")
+        );
+        const data = await response.json();
+        console.log(data);
+        setPeopleData(data);
+    };
+
     useEffect(() => {
-        const loadSearch = async () => {
-            const response = await fetch("/api/people");
-            const data = await response.json();
-            console.log(data);
-            setPeopleData(data);
-        };
         loadSearch();
-    }, []);
+    }, [selectedStatus]);
 
     const handleItemClick = (id) => {
         setPersonId(id);
@@ -32,6 +39,7 @@ export default function People() {
                     <div className="people_list" key={person.id}>
                         <h2 onClick={() => handleItemClick(person.id)}>
                             Name: {person.name}
+                            {/* Status: {person.status} */}
                         </h2>
                         <p>Occupation {person.occupation}</p>
                         <p>Selected Person's Id {personId}</p>
