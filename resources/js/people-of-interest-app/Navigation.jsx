@@ -1,18 +1,14 @@
 import React from "react";
-import {useState} from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navigation() {
     const [open, setOpen] = useState(true);
-    const toggleMenu =() => {
+    const toggleMenu = () => {
         setOpen(!open);
-    }
+    };
     return (
         <>
-       
-            
-       
-            <nav className={"sidenav" + (open ? '' : ' sidenav_closed')}>
+            <nav className={"sidenav" + (open ? "" : " sidenav_closed")}>
                 <div className="sidenav__content">
                     <img
                         src="./images/logos/mi6-seal.png"
@@ -29,9 +25,14 @@ export default function Navigation() {
                         </li>
                     </ul>
                 </div>
-                <span className={"sidenav__arrow" + (open ? '': ' sidenav__arrow_closed' )} onClick={()=> setOpen(!open)}></span>
-            </nav> 
-            
+                <span
+                    className={
+                        "sidenav__arrow" +
+                        (open ? "" : " sidenav__arrow_closed")
+                    }
+                    onClick={() => setOpen(!open)}
+                ></span>
+            </nav>
         </>
     );
 }
