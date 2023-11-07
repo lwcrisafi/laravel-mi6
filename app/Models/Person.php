@@ -5,6 +5,7 @@ use App\Models\Image;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Mission;
 
 class Person extends Model
 {
@@ -23,5 +24,10 @@ class Person extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function missions()
+    {
+        return $this->hasMany(Mission::class);
     }
 }
