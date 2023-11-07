@@ -8,17 +8,7 @@ use Illuminate\Http\Request;
 
 /* class PersonController extends Controller
 {
-<<<<<<< HEAD
     public function index() {
-=======
-    public function index()
-    {
-        $people = Person::with('aliases', 'statuses', 'image:id,path')->get();
-        return $people;
-    }
-}
-*/
->>>>>>> 00f19c82a9a8fa9cffa5c66090ccba985e3307b5
 
 
         $people = Person::with('aliases')
