@@ -9,7 +9,6 @@ export default function App() {
         <>
             <Navigation />
             <MainContent />
-            <People />
         </>
     );
 }
