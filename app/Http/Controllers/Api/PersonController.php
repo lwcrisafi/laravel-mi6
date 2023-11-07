@@ -9,14 +9,17 @@ use Illuminate\Http\Request;
 class PersonController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        // $people = Person::with('aliases')
-        //     ->whereHas('aliases', function ($query) {
-        //         $query->whereNotNull('alias');
-        //     })
-        //     ->get();
-        $people = Person::with('statuses')->where('status_id', 1)->where('name', 'not like', '%unknown%')->get();
+       $status_id = $request->input('status');
+
+       $people_query = Person::with('aliases', 'image', 'status');
+
+       if ($status_id) {
+        $people_query = $people_query->where('status_id', $status_id);
+       }
+
+       $people = $people_query->get();
 
         return $people;
     }
