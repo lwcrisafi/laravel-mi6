@@ -42,6 +42,18 @@ export default function Navigation({ content, setContent }) {
                                 People of interest
                             </a>
                         </li>
+                        <li
+                            className={
+                                "sidenav__link" +
+                                (content === "missions"
+                                    ? " sidenav__link_active"
+                                    : "")
+                            }
+                        >
+                            <a href="#" onClick={() => setContent("missions")}>
+                                Missions
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <span
