@@ -13,4 +13,10 @@ class MissionController extends Controller
 
         return $missions;
     }
+
+    public function show($mission_id) {
+        $mission = Mission::findOrFail($mission_id);
+
+        return $mission;
+    }
 }
