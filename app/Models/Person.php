@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Image;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,9 +15,9 @@ class Person extends Model
         return $this->hasMany(Alias::class);
     }
 
-    public function images()
+    public function image()
     {
-        return $this->belongsTo(Image::class);
+        return $this->belongsTo(Image::class, 'image_id', 'id');
     }
 
     public function statuses()
