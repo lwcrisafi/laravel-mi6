@@ -1,6 +1,9 @@
 import React from "react";
 import People from "./People";
 import Missions from "./Missions";
+import { Route, Routes } from "react-router-dom";
+import Register from "./Register";
+import Login from "./Login";
 
 export default function MainContent({ content }) {
     let chosenContent;
@@ -17,9 +20,13 @@ export default function MainContent({ content }) {
         default:
             break;
     }
-    return (
-        <>
-            <main>{chosenContent}</main>
-        </>
-    );
+    return <main>
+        <Routes>
+            <Route path="/" element={ <div className="home"><h1>Welcome to MI6</h1></div> } />
+            <Route path="/people-of-interest" element={ <People /> } />
+            <Route path="/missions" element={ <Missions /> } />
+            <Route path="/register" element={ <Register /> } />
+            <Route path="/login" element={ <Login /> } />
+        </Routes>
+    </main>
 }

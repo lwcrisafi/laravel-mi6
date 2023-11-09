@@ -12,7 +12,7 @@
 
 <div id="people-of-interest-app"></div>
 
-{{-- @viteReactRefresh --}}
+@viteReactRefresh
 @vite('resources/js/people_of_interest.jsx')
 
 
