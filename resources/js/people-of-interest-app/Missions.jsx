@@ -18,6 +18,7 @@ export default function Missions() {
     };
 
     const sendMission = async (mission_id) => {
+        console.log(mission_id);
         const response = await fetch("/api/send-mission", {
             method: "POST",
             headers: {
@@ -27,9 +28,7 @@ export default function Missions() {
                     .querySelector('meta[name="csrf-token"]')
                     .getAttribute("content"),
             },
-            body: JSON.stringify({
-                'mission_id': mission_id,
-            }),
+            body: JSON.stringify({ mission_id: mission_id }),
         });
     };
 

@@ -51,12 +51,11 @@ class MissionController extends Controller
 
     public function sendMissionDetails(Request $request)
     {
-        //$user = $request->user_id;
 
         $mission = Mission::findOrFail($request->mission_id);
 
         //for authorized user
-
+        //$user = $request->user_id;
         // $user = auth()->user();  //the same as above
         // $user = User::findOrFail($user->id);
         //Mail::to($user->email)
