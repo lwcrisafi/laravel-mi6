@@ -46,6 +46,8 @@ class MissionController extends Controller
     public function updateMission(Request $request, $id){
 
         $mission= Mission::find($id);
+
+        
         if (!$mission) {
             return response () ->json(['message'=> 'mission not found'], 404);
         }
