@@ -35,4 +35,4 @@ Route::view('/admin/{path?}', 'admin-app')->where('path', '.*');
 Route::view('/{path?}', 'homepage')->where('path', '.*');
 
 
-Route::get('/{path?}', [AppController::class, 'app'])->where('path', '.*');
+// Route::get('/{path?}', [AppController::class, 'app'])->where('path', '.*');
