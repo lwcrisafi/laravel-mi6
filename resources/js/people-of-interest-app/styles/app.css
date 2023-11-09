@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Noto+Serif+Display:wght@200;400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    background-color: #2B5554;
+    color: white;
+    height: 100%;
+    font-size: 16px;
+}
+main {
+    font-family: 'Noto Serif Display', serif;
+    background-image: url('/images/logos/mi6-seal-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 3.6rem;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#people-of-interest-app {
+    height: 100%;
+
+    > div {
+        display: flex;
+    }
+}
+
+.sidenav {
+    position: relative;
+    width: 25rem;
+    min-height: 100vh;
+    background-color: #163838;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.4rem;
+    transition: width 1s;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 5rem;
+        padding: 0.5rem 0;
+    }
+
+    &__links {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    &__link {
+        padding: 0.5rem 1rem;
+        margin: 0;
+        cursor: pointer;
+        color: white;
+        display: flex;
+
+        &_active {
+            background-color: #2B5554;
+        }
+
+        &:hover {
+            background-color: #2B5554;
+        }
+
+        a {
+            flex-grow: 1;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__user-info {
+        margin-top: auto;
+        padding: 0.5rem;
+        font-size: 0.75em;
+        text-align: center;
+    }
+
+    &__arrow {
+        background-color: #163838;
+        position: absolute;
+        top: 1rem;
+        right: -1.3rem;
+        width: 1.3rem;
+        height: 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0.5rem 0.5rem 0;
+        cursor: pointer;
+
+        &::after {
+            content: '<';
+        }
+
+        &_closed {
+            &::after {
+                content: '>';
+            }
+        }
+    }
+
+    &_closed {
+        width: 0;
+    }
+}
+
+main {
+    font-family: 'Noto Serif Display', serif;
+    background-image: url(/public/images/mi6-seal-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    display: flex;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.people-list, .missions-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding: 1rem;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__person, &__mission {
+        cursor: pointer;
+        transition: font-size 1s;
+
+        &:hover {
+            font-size: 1.1rem;
+            color: rgb(208, 208, 208);
+        }
+    }
+
+    &__person-details {
+        display: flex;
+        flex-direction: column;
+        background-color: #1638388a;
+        border-radius: 0.5rem ;
+        padding: 2rem;
+
+        img {
+            align-self: center;
+        }
+
+        ol {
+            margin: 0;
+        }
+    }
+}
+
+.status-filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    &__status{
+        font-size: 0.75rem;
+        padding: 0.5rem;
+
+        &_selected {
+            background-color: #2B5554;
+        }
+    }
+}
+
+.missions-list {
+    &__form-container {
+        background-color: #1638388a;
+        border-radius: 0.5rem ;
+        padding: 2rem;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .missions-list__form-input {
+                background-color: #163838;
+                color: white;
+                border: 1px solid #2B5554;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+
+
+button {
+    width: fit-content;
+    padding: 1rem;
+    color: white;
+    background-color: #163838;
+    border: 1px solid #163838;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #2B5554;
+    }
+}
